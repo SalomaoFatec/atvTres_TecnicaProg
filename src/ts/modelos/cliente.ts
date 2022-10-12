@@ -1,3 +1,4 @@
+import Acomodacao from "./acomodacao"
 import Documento from "./documento"
 import Endereco from "./endereco"
 import Telefone from "./telefone"
@@ -12,6 +13,7 @@ export default class Cliente {
     private documentos: Documento[] = []
     private dependentes: Cliente[] = []
     private titular!: Cliente
+    private acomodacao!: Acomodacao
 
     constructor(nome: string, nomeSocial: string, dataNascimento: Date) {
         this.nome = nome
@@ -29,6 +31,8 @@ export default class Cliente {
     public get Documentos() { return this.documentos }
     public get Dependentes() { return this.dependentes }
     public get Titular() { return this.titular }
+    public get Acomodacao() { return this.acomodacao }
 
     public set Endereco(endereco: Endereco) { this.endereco = endereco }
+    public set Acomodacao(acomodacao: Acomodacao) { this.acomodacao = acomodacao }
 }
